@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="AeroLearn — تعلّم أساسيات الطيران والطائرات النموذجية والمسيّرات.">
+  <title>AeroLearn | تعلّم الطيران</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="AeroLearn الصفحة الرئيسية"><span class="brand-icon">✈</span><span>AeroLearn<small>تعلّم • ابنِ • حلّق</small></span></a>
+    <button class="menu-toggle" id="menuToggle" aria-label="فتح القائمة">☰</button>
+    <nav id="nav">
+      <a href="#home">الرئيسية</a><a href="#courses">الدروس</a><a href="#simulator">المحاكي</a><a href="#resources">المصادر</a>
+    </nav>
+    <a class="top-cta" href="#courses">ابدأ التعلّم</a>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-copy">
+        <p class="eyebrow">أكاديميتك الجوية المصغّرة</p>
+        <h1>تعلّم الطيران<br><span>بخطوات بسيطة</span></h1>
+        <p class="hero-desc">من مبادئ الطيران إلى الطائرات النموذجية والمسيّرات، ابدأ رحلتك من هنا.</p>
+        <div class="hero-actions"><a class="btn primary" href="#courses">استكشف الدروس <span>←</span></a><a class="btn secondary" href="#simulator">جرّب المحاكي</a></div>
+        <div class="hero-stats"><div><b>04</b><span>مسارات تعليمية</span></div><div><b>100%</b><span>مناسب للمبتدئين</span></div><div><b>مجاني</b><span>للتعلّم الذاتي</span></div></div>
+      </div>
+      <div class="hero-art" role="img" aria-label="رسم توضيحي لطائرة تحلّق في السماء">
+        <div class="sun"></div><div class="cloud cloud-one"></div><div class="cloud cloud-two"></div>
+        <div class="flight-line"></div><div class="plane">✈</div>
+        <div class="art-label"><span class="pulse"></span> مستعد للإقلاع؟</div>
+      </div>
+    </section>
+
+    <section class="section" id="courses">
+      <div class="section-heading"><div><p class="eyebrow">ابدأ من الأساسيات</p><h2>اختر مسارك الجوي</h2></div><p>دروس قصيرة تساعدك على فهم عالم الطيران خطوة بخطوة.</p></div>
+      <div class="course-grid">
+        <article class="course-card" data-course="basics"><div class="course-visual sky">✈️<span>01 / FLIGHT</span></div><div class="course-body"><span class="tag">الأساسيات</span><h3>كيف تطير الطائرة؟</h3><p>تعرّف على الرفع والوزن والدفع والسحب، وهي القوى الأساسية للطيران.</p><button class="text-button" data-open="basics">ابدأ الدرس <span>←</span></button></div></article>
+        <article class="course-card" data-course="models"><div class="course-visual mint">🛩️<span>02 / RC MODELS</span></div><div class="course-body"><span class="tag">طائرات نموذجية</span><h3>مكوّنات الطائرة اللاسلكية</h3><p>اكتشف وظيفة الجناح والمحرك والسيرفو وجهاز الاستقبال.</p><button class="text-button" data-open="models">ابدأ الدرس <span>←</span></button></div></article>
+        <article class="course-card" data-course="drones"><div class="course-visual violet">🚁<span>03 / DRONES</span></div><div class="course-body"><span class="tag">المسيّرات</span><h3>كيف تعمل المسيّرة؟</h3><p>افهم المراوح والبطارية ومتحكّم الطيران وأساسيات السلامة.</p><button class="text-button" data-open="drones">ابدأ الدرس <span>←</span></button></div></article>
+        <article class="course-card" data-course="safety"><div class="course-visual amber">🧭<span>04 / SAFETY</span></div><div class="course-body"><span class="tag">السلامة</span><h3>قبل أول رحلة</h3><p>قائمة تحقق تعليمية عن المكان والطقس والبطارية والقواعد المحلية.</p><button class="text-button" data-open="safety">ابدأ الدرس <span>←</span></button></div></article>
+      </div>
+    </section>
+
+    <section class="lesson-panel section" id="lessonPanel" hidden>
+      <div class="section-heading"><div><p class="eyebrow">درس تفاعلي</p><h2 id="lessonTitle">عنوان الدرس</h2></div><button id="closeLesson" class="close-button">إغلاق ✕</button></div>
+      <div class="lesson-content"><div class="lesson-text" id="lessonText"></div><div class="quiz"><h3>اختبر فهمك</h3><p id="quizQuestion"></p><div id="quizOptions" class="quiz-options"></div><p id="quizFeedback" aria-live="polite"></p></div></div>
+    </section>
+
+    <section class="sim-section" id="simulator">
+      <div class="sim-copy"><p class="eyebrow">تجربة افتراضية</p><h2>مركز المحاكاة</h2><p>غيّر القيم وشاهد كيف تتبدّل مؤشرات رحلة افتراضية. هذه محاكاة تعليمية فقط، ولا تتصل بطائرة حقيقية.</p>
+        <label for="speed">السرعة الافتراضية <strong id="speedValue">60 كم/س</strong></label><input id="speed" type="range" min="20" max="120" value="60">
+        <label for="altitude">الارتفاع الافتراضي <strong id="altitudeValue">100 م</strong></label><input id="altitude" type="range" min="0" max="300" value="100">
+        <div class="sim-buttons"><button class="btn primary" id="flyButton">ابدأ المحاكاة</button><button class="btn secondary" id="resetButton">إعادة ضبط</button></div>
+        <p class="sim-status" id="simStatus" aria-live="polite">الحالة: جاهز للبدء</p>
+      </div>
+      <div class="sim-screen"><div class="screen-top"><span><i></i> FLIGHT LAB</span><span>SIMULATION / 01</span></div><div class="horizon"><div class="horizon-sun"></div><div class="horizon-plane">✈</div><div class="horizon-line"></div></div><div class="telemetry"><div><small>السرعة</small><b id="speedReadout">60 <small>كم/س</small></b></div><div><small>الارتفاع</small><b id="altitudeReadout">100 <small>م</small></b></div><div><small>الوضع</small><b id="modeReadout">STANDBY</b></div></div></div>
+    </section>
+
+    <section class="section resources" id="resources"><div class="section-heading"><div><p class="eyebrow">واصل التعلّم</p><h2>موارد مفيدة</h2></div><p>قبل الطيران الفعلي، تعلّم القواعد واطلب الإشراف من مدرّب مؤهل.</p></div>
+      <div class="resource-grid"><div class="resource-item"><span>📖</span><div><h3>دفتر المصطلحات</h3><p>اجمع الكلمات الجديدة ومعانيها في مكان واحد.</p></div></div><div class="resource-item"><span>🛡️</span><div><h3>السلامة أولاً</h3><p>اتبع قوانين بلدك وتعليمات الجمعية والمدرّب.</p></div></div><div class="resource-item"><span>🔧</span><div><h3>مشاريع عملية</h3><p>ابدأ بنموذج تعليمي وافحصه قبل أي تجربة ميدانية.</p></div></div></div>
+    </section>
+  </main>
+
+  <footer><a class="brand" href="#"><span class="brand-icon">✈</span><span>AeroLearn<small>تعلّم • ابنِ • حلّق</small></span></a><p>مشروع تعليمي مفتوح المصدر — صُنع بشغف للطيران.</p><a href="#home">العودة للأعلى ↑</a></footer>
+  <script src="script.js"></script>
+</body>
+</html>
